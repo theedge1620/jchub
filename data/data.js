@@ -159,12 +159,12 @@ export const data = [
 
             {
                 "name": "Helldivers 2",
-                "link": "https:www.youtube.com/@cloudenvy1440",
+                "link": "https://www.youtube.com/@cloudenvy1440",
                 "img": "HD.jpg"
             },
             {
                 "name": "Video Editing",
-                "link": "https:www.youtube.com/@cloudenvy1440",
+                "link": "https://www.youtube.com/@cloudenvy1440",
                 "img": "video.jpg"
             },
             {
