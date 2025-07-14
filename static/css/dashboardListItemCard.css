@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card-container{
+    position: relative;
+    cursor: pointer;
+    perspective: 1000px;
+    padding: 1.5rem;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    position: relative;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: scale(0);
+    border-radius: 2.5%;
+    box-shadow: 0rem 0rem .25rem .25rem rgba(0,0,0,0.25);
+}
+
+.card-img-wrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: inherit;
+}
+
+#card-canvas{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#card-img{
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: inherit;
+    object-fit: cover;
+    transition: all 200ms ease;
+}
+
+.card-sheen{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        45deg, 
+        rgba(0, 0, 0, 0.35)25%,
+        transparent 50%,
+        rgba(255,255,255,0.35) 70%, 
+        rgba(255,255,255,0.5) 75%,
+        rgba(255,255,255,0.2) 80%
+    );
+    background-position: 50% 50%;
+    background-size: 400% 400%;
+    transition: all 200ms ease;
+
+}
+
+.card-overlay {
+    transform-style: preserve-3d;
+    position: absolute;
+    pointer-events: none;
+    padding: 0.2rem 0.5rem;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+    border-radius: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    transition: all 200ms ease;
+    z-index: 1;
+}
+
+#card-name{
+    transform-style: preserve-3d;
+    user-select: none;
+    pointer-events: none;
+    font-size: 1.2em;
+    transition: all 200ms ease;
+}
+
+@media (max-width: 400px){
+
+    #card-name{
+        font-size: clamp(0.5em, 5vw, 1.2em);
+    }
+
+    .card-container{
+        padding: 0rem;
+    }
+    
+    .card-overlay{
+        height: 100%;
+    }
+}
