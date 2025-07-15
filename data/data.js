@@ -68,6 +68,12 @@ export const data = [
                 "img": "valve_issues.jpg"
 
             },
+	    {
+                "name": "U.S. EPR Design Certificaiton",
+                "link": "https://adams-search.nrc.gov/results/%257B%2522keywords%2522%253A%2522Carneal%2522%252C%2522legacyLibFilter%2522%253Atrue%252C%2522mainLibFilter%2522%253Atrue%252C%2522any%2522%253A%255B%257B%2522propertyItem%2522%253A%2522%2522%252C%2522keywords%2522%253A%2522%2522%252C%2522startDate%2522%253A%2522%2522%252C%2522endDate%2522%253A%2522%2522%252C%2522dateOperator%2522%253A%2522between%2522%252C%2522textOperator%2522%253A%2522contains%2522%252C%2522isDate%2522%253Afalse%257D%255D%252C%2522all%2522%253A%255B%257B%2522propertyItem%2522%253A%252200603cf1-0faa-41d8-b76f-7ada7b1b3dcd%2522%252C%2522keywords%2522%253A%2522U.S.%2520EPR%2522%252C%2522startDate%2522%253A%2522%2522%252C%2522endDate%2522%253A%2522%2522%252C%2522dateOperator%2522%253A%2522between%2522%252C%2522textOperator%2522%253A%2522contains%2522%252C%2522isDate%2522%253Afalse%257D%252C%257B%2522propertyItem%2522%253A%2522%2522%252C%2522keywords%2522%253A%2522%2522%252C%2522startDate%2522%253A%2522%2522%252C%2522endDate%2522%253A%2522%2522%252C%2522dateOperator%2522%253A%2522between%2522%252C%2522textOperator%2522%253A%2522contains%2522%252C%2522isDate%2522%253Afalse%257D%255D%257D",
+                "img": "epr.jpg"
+
+            },			
             {
                 "name": "NRC AOV IST",
                 "link": "https://www.researchgate.net/publication/333125641_Regulatory_Perspectives_on_ASME_OM_Code_Mandatory_Appendix_IV_Revision_0_Inservice_Testing_of_Air-Operated_Valves_in_Light-Water_Reactor_Nuclear_Power_Plants",
