@@ -23,6 +23,11 @@ export const data = [
                 "img": "ope_ML.jpg"
             },
             {
+                "name": "OL Exam Generator",
+                "link": "https://www.nrc.gov/reactors/operator-licensing/operator-license-exam-outline-generator.html",
+                "img": "exam.jpg"
+            },
+            {
                 "name": "Operator Reactor Scram Trending",
                 "link": "https://www.nrc.gov/reactors/operating/ops-experience/scrams.html",
                 "img": "scrams_trend.jpg"
