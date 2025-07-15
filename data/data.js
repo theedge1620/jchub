@@ -184,7 +184,7 @@ export const data = [
             },
    	    {
                 "name": "Thought",
-                "link": "https:www.youtube.com/@TheWhyFiles",
+                "link": "https://www.youtube.com/@TheWhyFiles",
                 "img": "sign.jpg"
             }
             
