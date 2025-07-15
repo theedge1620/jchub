@@ -48,11 +48,6 @@ export const data = [
                 "img": "LER_Search.jpg"
             },
             {
-                "name": "GLRP Patent",
-                "link": "https://patentimages.storage.googleapis.com/7d/73/17/31b4c3679961ca/US7519502.pdf",
-                "img": "GLRP.jpg"
-            },
-            {
                 "name": "NRC Rulemaking",
                 "link": "https://adams-search.nrc.gov/results/%257B%2522keywords%2522%253A%2522Carneal%2522%252C%2522legacyLibFilter%2522%253Atrue%252C%2522mainLibFilter%2522%253Atrue%252C%2522any%2522%253A%255B%257B%2522propertyItem%2522%253A%2522%2522%252C%2522keywords%2522%253A%2522%2522%252C%2522startDate%2522%253A%2522%2522%252C%2522endDate%2522%253A%2522%2522%252C%2522dateOperator%2522%253A%2522between%2522%252C%2522textOperator%2522%253A%2522contains%2522%252C%2522isDate%2522%253Afalse%257D%255D%252C%2522all%2522%253A%255B%257B%2522propertyItem%2522%253A%252200603cf1-0faa-41d8-b76f-7ada7b1b3dcd%2522%252C%2522keywords%2522%253A%2522Rule%2522%252C%2522startDate%2522%253A%2522%2522%252C%2522endDate%2522%253A%2522%2522%252C%2522dateOperator%2522%253A%2522between%2522%252C%2522textOperator%2522%253A%2522contains%2522%252C%2522isDate%2522%253Afalse%257D%255D%257D",
                 "img": "CODAP.jpg"
@@ -79,6 +74,11 @@ export const data = [
                 "link": "https://adams-search.nrc.gov/results/%257B%2522keywords%2522%253A%2522Carneal%2522%252C%2522legacyLibFilter%2522%253Atrue%252C%2522mainLibFilter%2522%253Atrue%252C%2522any%2522%253A%255B%257B%2522propertyItem%2522%253A%2522%2522%252C%2522keywords%2522%253A%2522%2522%252C%2522startDate%2522%253A%2522%2522%252C%2522endDate%2522%253A%2522%2522%252C%2522dateOperator%2522%253A%2522between%2522%252C%2522textOperator%2522%253A%2522contains%2522%252C%2522isDate%2522%253Afalse%257D%255D%252C%2522all%2522%253A%255B%257B%2522propertyItem%2522%253A%252200603cf1-0faa-41d8-b76f-7ada7b1b3dcd%2522%252C%2522keywords%2522%253A%2522U.S.%2520EPR%2522%252C%2522startDate%2522%253A%2522%2522%252C%2522endDate%2522%253A%2522%2522%252C%2522dateOperator%2522%253A%2522between%2522%252C%2522textOperator%2522%253A%2522contains%2522%252C%2522isDate%2522%253Afalse%257D%252C%257B%2522propertyItem%2522%253A%2522%2522%252C%2522keywords%2522%253A%2522%2522%252C%2522startDate%2522%253A%2522%2522%252C%2522endDate%2522%253A%2522%2522%252C%2522dateOperator%2522%253A%2522between%2522%252C%2522textOperator%2522%253A%2522contains%2522%252C%2522isDate%2522%253Afalse%257D%255D%257D",
                 "img": "epr.jpg"
 
+            },
+	     {
+                "name": "GLRP Patent",
+                "link": "https://patentimages.storage.googleapis.com/7d/73/17/31b4c3679961ca/US7519502.pdf",
+                "img": "GLRP.jpg"
             },
 	    {
                 "name": "NUREG/CR-6916, GSI-191 Coating Test",
@@ -169,7 +169,51 @@ export const data = [
             }            
 
         ]
-    },  {
+    }, {
+        "category": "Education",
+        "data": [
+            {
+                "name": "General Assembly",
+                "link": "https://generalassemb.ly/",
+                "img": "GA.jpg"
+            },
+	    {
+                "name": "UMD - ME Ph.D. candidate",
+                "link": "https://me.umd.edu/",
+                "img": "UMD.jpg"
+            },
+            {
+                "name": "VT - ESM BS/MS",
+                "link": "https://me.vt.edu/for-students/undergraduate/esm.html",
+                "img": "VT.jpg"
+            },
+            {
+                "name": "Michigan - MS candidate",
+                "link": "https://bme.umich.edu",
+                "img": "UMICH.jpg"
+            },
+            {
+                "name": "Univ. of Richmond (during HS)",
+                "link": "https://www.richmond.edu/",
+                "img": "UR.jpg"
+            },
+            {
+                "name": "Randolph-Macon (during HS)",
+                "link": "https://www.umich.edu",
+                "img": "RMC.jpg"
+            },
+            {
+                "name": "Virginia Commonwealth University (during HS)",
+                "link": "https://www.vcu.edu",
+                "img": "VCU.jpg"
+            },
+	    {
+                "name": "PHHS - Valedictorian 1997",
+                "link": "https://phhs.hcps.us/",
+                "img": "PHHS.jpg"
+            }
+        ]
+    }, {
         "category": "Hobbies and Interests",
         "data": [
 
