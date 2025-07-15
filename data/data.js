@@ -203,7 +203,7 @@ export const data = [
                 "img": "RMC.jpg"
             },
             {
-                "name": "Virginia Commonwealth University (during HS)",
+                "name": "VCU (during HS)",
                 "link": "https://www.vcu.edu",
                 "img": "VCU.jpg"
             },
