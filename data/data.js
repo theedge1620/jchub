@@ -216,7 +216,11 @@ export const data = [
     }, {
         "category": "Hobbies and Interests",
         "data": [
-
+	    {
+                "name": "Thought",
+                "link": "https://www.youtube.com/@TheWhyFiles",
+                "img": "sign.jpg"
+            },
             {
                 "name": "Helldivers 2",
                 "link": "https://www.youtube.com/@cloudenvy1440",
@@ -236,12 +240,7 @@ export const data = [
                 "name": "Gardening",
                 "link": "https://extension.umd.edu/resource/vegetable-planting-calendar",
                 "img": "truck.jpg"
-            },
-   	    {
-                "name": "Thought",
-                "link": "https://www.youtube.com/@TheWhyFiles",
-                "img": "sign.jpg"
-            }
+            }  	    
             
         ]
     }
