@@ -249,13 +249,18 @@ export const data = [
 export const links = [
     {
         link: "https://jbcresume.netlify.app",
-        name: "My Resume",
+        name: "My Full CV",
         icon: "A"
+    },
+    {
+        link: "./static/Jason Carneal - Resume.pdf",
+        name: "My Resume",
+	icon: "B"
     },
     {
         link: "mailto:jason.carneal@protonmail.com",
         name: "Email Me",
-        icon: "B"
+	icon: "C"
     }
 
 ]
