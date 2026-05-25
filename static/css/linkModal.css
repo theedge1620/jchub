@@ -20,6 +20,12 @@
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255,255,255, 0.2));
     backdrop-filter: blur(0.45rem);
     z-index: 100;
+    transition: left 0.5s ease, opacity 0.5s ease;
+}
+
+.link-modal-wrapper.open {
+    left: 0%;
+    opacity: 1;
 }
 
 .link-container{

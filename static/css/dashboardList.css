@@ -10,6 +10,13 @@
     display: flex;
     flex-direction: column;
     opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.list-wrapper.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .item-list-category-wrapper {
@@ -21,6 +28,13 @@
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255,255,255, 0.2));
     backdrop-filter: blur(0.45rem);
     opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.item-list-category-wrapper.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .item-list-category{

@@ -10,7 +10,7 @@ template.innerHTML = `
                     <circle cx="50%" cy="50%" r="35%" id="link-item-circle-2x"></circle>
                     <circle cx="50%" cy="50%" r="25%" id="link-item-circle-3x"></circle>
                     <circle cx="50%" cy="50%" r="17.5%" id="link-item-circle-4x"></circle>
-                </svg>                
+                </svg>
             </div>
             <div class="link-item-name-wrapper">
                 <p class="link-item-name"></p>
@@ -19,85 +19,21 @@ template.innerHTML = `
     </li>
 `
 
-const linkItemCirclesInitializer = (linkItemCircles, linkItemCirclesIntroTL) => {
-
-    linkItemCircles.forEach((circle, index) => {
-
-        let addDelay = "-=0.05"
-        if(index === 0){
-            addDelay = "0"
-        }   
-        linkItemCirclesIntroTL.to(circle, {opacity: 1}, addDelay)
-
-    })
-}
-
-//attribution to the following stackoverflow answer:
-//https://stackoverflow.com/a/143889
-const checkOverflow = (el) => 
-{
-   var curOverflow = el.style.overflow;
-
-   if ( !curOverflow || curOverflow === "visible" )
-      el.style.overflow = "hidden";
-
-   var isOverflowing = el.clientWidth < el.scrollWidth 
-      || el.clientHeight < el.scrollHeight;
-
-   el.style.overflow = curOverflow;
-
-   return isOverflowing;
-}
-
-const linkModalItemAnimation = (linkModalItem) => {
-
-    const linkModalItemContainer = linkModalItem.shadowRoot.querySelector(".link-item-container")
-
-    const linkModalItemTL = gsap.timeline({defaults:{duration: .2}}).pause()
-    linkModalItemTL.to(linkModalItemContainer, {transform: "scale(1.2)", ease: "back.out(1.7)"}, 0)
-
-    linkModalItemTL.to(linkModalItemContainer, {boxShadow: "0rem 0.25rem 0.2rem rgba(0, 0,0,0.5)", background: "rgb(0, 22, 121)", duration:.2}, 0)
-    
-    const linkModalItemCircleContainer = linkModalItem.shadowRoot.querySelector('.link-item-circle-container')
-    linkModalItemTL.to(linkModalItemCircleContainer, {background: "rgb(0, 22, 121)"}, 0)
-
-    const linkModalItemTextWrapper = linkModalItem.shadowRoot.querySelector(".link-item-name-wrapper")
-    const linkModalItemText = linkModalItem.shadowRoot.querySelector(".link-item-name")
-
-    const linkModalItemTextTL = gsap.timeline().pause()
-
-    linkModalItemTL.to(linkModalItemTextWrapper, {fontWeight: "600"}, 0)
-    
-    const linkItemSVG = linkModalItem.shadowRoot.querySelector(".link-item-circle")
-    const linkItemCircles = linkItemSVG.querySelectorAll("circle")
-
-    const linkItemCirclesIntroTL = gsap.timeline({defaults: {duration: .15, ease: "back.out(1)"}}).pause()
-    
-    linkItemCirclesInitializer(linkItemCircles, linkItemCirclesIntroTL)
-
-    linkModalItemContainer.addEventListener("mouseenter", () => {
-        linkModalItemTL.play()
-        linkItemCirclesIntroTL.play()
-
-        if(checkOverflow(linkModalItemText)){
-            linkModalItemTextTL.to(linkModalItemText, {marginLeft: "-100%", duration: 2, repeat: -1, repeatDelay: 1.5, delay: 0.5, ease: "none"}).play()
-        }
-    })
-
-    linkModalItemContainer.addEventListener("mouseleave", () => {
-        linkModalItemTL.reverse()
-        linkItemCirclesIntroTL.reverse()
-        linkModalItemTextTL.progress(0).clear()
-    })
-
+//attribution: https://stackoverflow.com/a/143889
+const checkOverflow = (el) => {
+    const curOverflow = el.style.overflow
+    if (!curOverflow || curOverflow === "visible") el.style.overflow = "hidden"
+    const isOverflowing = el.clientWidth < el.scrollWidth || el.clientHeight < el.scrollHeight
+    el.style.overflow = curOverflow
+    return isOverflowing
 }
 
 export default class LinkModalItem extends HTMLElement {
 
-    constructor(){
+    constructor() {
         super()
 
-        this.attachShadow({mode: "open"})
+        this.attachShadow({ mode: "open" })
 
         const styleElement = document.createElement('link')
         styleElement.setAttribute('rel', 'stylesheet')
@@ -107,22 +43,38 @@ export default class LinkModalItem extends HTMLElement {
 
         const templateContent = template.content.cloneNode(true)
         this.shadowRoot.appendChild(templateContent)
-
     }
 
-        connectedCallback(){
-            
-            const linkItemLink = this.shadowRoot.querySelector(".link-item-link")
-            const linkItemName = this.shadowRoot.querySelector(".link-item-name")
+    connectedCallback() {
+        const linkItemLink = this.shadowRoot.querySelector(".link-item-link")
+        const linkItemName = this.shadowRoot.querySelector(".link-item-name")
+        const container = this.shadowRoot.querySelector(".link-item-container")
+        const circles = this.shadowRoot.querySelectorAll("circle")
 
-            linkItemLink.setAttribute("href", this.getAttribute('link'))
-            linkItemLink.setAttribute('target', '_blank')
+        linkItemLink.setAttribute("href", this.getAttribute('link'))
+        linkItemLink.setAttribute('target', '_blank')
+        linkItemName.textContent = this.getAttribute('name')
 
-            linkItemName.textContent = this.getAttribute('name')
+        container.addEventListener("mouseenter", () => {
+            container.classList.add('hovered')
+            circles.forEach((circle, i) => {
+                circle.style.transitionDelay = `${i * 0.05}s`
+                circle.classList.add('visible')
+            })
+            if (checkOverflow(linkItemName)) {
+                linkItemName.classList.add('scrolling')
+            }
+        })
 
-            linkModalItemAnimation(this)
-        }
-
+        container.addEventListener("mouseleave", () => {
+            container.classList.remove('hovered')
+            circles.forEach(circle => {
+                circle.style.transitionDelay = '0s'
+                circle.classList.remove('visible')
+            })
+            linkItemName.classList.remove('scrolling')
+        })
+    }
 }
 
 customElements.define('link-modal-item', LinkModalItem)
